@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/voting_box"
+    android:id="@+id/main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="270dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="Please Enter ID"
+            android:textColor="@color/black"
+            android:textSize="40sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/Tv_enterId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_id"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:inputType="number"
+            android:textSize="35sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Tv_enterId"
+            android:layout_centerHorizontal="true"
+            android:text="Enter"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:strokeColor="#2EA613">
+
+        </com.google.android.material.button.MaterialButton>
+        <TextView
+            android:id="@+id/msg_hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:maxLines="2"
+            android:minLines="1"
+            android:visibility="gone">
+        </TextView>
+
+        <TextView
+            android:id="@+id/msg_wrong_kelpi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            android:textSize="35sp"
+            android:text="Sorry You Are In The Wrong Kalpi!"
+            android:textColor="@color/black"
+            android:maxLines="2"
+            android:minLines="1"
+            android:visibility="gone">
+        </TextView>
+
+
+        <ImageView
+            android:id="@+id/btn_Licud"
+            android:background="@drawable/img_licud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Licud"
+            android:layout_below="@+id/msg_hello"
+            android:layout_margin="20dp"
+            android:visibility="gone">
+        </ImageView>
+        <ImageView
+            android:id="@+id/btn_white_blue"
+            android:background="@drawable/img_white_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="white blue"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/btn_Licud"
+            android:visibility="gone">
+        </ImageView>
+        <ImageView
+            android:id="@+id/btn_havoda"
+            android:background="@drawable/img_havoda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="havoda"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/btn_white_blue"
+            android:visibility="gone">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/msg_select_party"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:layout_margin="18dp"
+            android:maxLines="3"
+            android:textSize="38sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/txt_wearing_suit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="18dp"
+            android:text="Are You Wearing A Protection Suit?"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:textSize="39sp">
+
+        </TextView>
+        <Button
+            android:id="@+id/btn_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_below="@+id/txt_wearing_suit"
+            android:text="Yes"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            ></Button>
+        <Button
+            android:id="@+id/btn_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_wearing_suit"
+            android:layout_toRightOf="@+id/btn_yes"
+            android:layout_marginStart="15dp"
+            android:text="No"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            ></Button>
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
