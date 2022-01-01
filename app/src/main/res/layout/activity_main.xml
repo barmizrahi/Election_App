@@ -23,6 +23,7 @@
             android:layout_marginBottom="15dp"
             android:text="Please Enter ID"
             android:textColor="@color/black"
+            android:visibility="gone"
             android:textSize="40sp">
 
         </TextView>
@@ -35,6 +36,7 @@
             android:layout_centerInParent="true"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
+            android:visibility="gone"
             android:layout_marginBottom="15dp"
             android:inputType="number"
             android:textSize="35sp" />
@@ -44,10 +46,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Tv_enterId"
+            android:visibility="gone"
             android:layout_centerHorizontal="true"
             android:text="Enter"
-            android:textSize="20sp"
             android:textColor="@color/black"
+            android:textSize="20sp"
             app:strokeColor="#2EA613">
 
         </com.google.android.material.button.MaterialButton>
@@ -115,9 +118,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textColor="@color/black"
-            android:layout_margin="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="18dp"
             android:maxLines="3"
+            android:visibility="gone"
+            android:textColor="@color/black"
             android:textSize="38sp">
 
         </TextView>
@@ -159,6 +166,31 @@
             android:textColor="@color/black"
             ></Button>
 
+        <TextView
+            android:id="@+id/citizen"
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/user"></TextView>
+
+        <TextView
+            android:id="@+id/sickCitizen"
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_toRightOf="@+id/citizen"
+            android:layout_centerVertical="true"
+            android:background="@drawable/covid_19"></TextView>
+
+        <TextView
+            android:id="@+id/soldier"
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/sickCitizen"
+            android:background="@drawable/soldier"></TextView>
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

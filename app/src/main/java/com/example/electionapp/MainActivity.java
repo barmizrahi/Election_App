@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
 private TextView textView_id;
 private TextView msg_hello;
 private TextView msg_select_party;
+private TextView citizen;
+private TextView sickCitizen;
+private TextView soldier;
 private EditText Tv_enterId;
 private Button bt_confirm;
 
@@ -35,25 +38,94 @@ private Button btn_No;
         msg_select_party = findViewById(R.id.msg_select_party);
         Tv_enterId = findViewById(R.id.Tv_enterId);
         bt_confirm = findViewById(R.id.bt_confirm);
-        btn_Licud =findViewById(R.id.btn_Licud);;
+        btn_Licud =findViewById(R.id.btn_Licud);
         btn_white_blue =findViewById(R.id.btn_white_blue);
         btn_havoda =findViewById(R.id.btn_havoda);
         msg_wrong_kelpi = findViewById(R.id.msg_wrong_kelpi);
         txt_wearing_suit = findViewById(R.id.txt_wearing_suit);
         btn_yes = findViewById(R.id.btn_yes);
         btn_No = findViewById(R.id.btn_no);
+        citizen = findViewById(R.id.citizen);
+        sickCitizen = findViewById(R.id.sickCitizen);
+        soldier = findViewById(R.id.soldier);
+        citizen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                citizen.setVisibility(View.GONE);
+                sickCitizen.setVisibility(View.GONE);
+                soldier.setVisibility(View.GONE);
+                normalCitizenTryToVote();
+            }
+        });
+        sickCitizen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                citizen.setVisibility(View.GONE);
+               // sickCitizen.setVisibility(View.GONE);
+                //soldier.setVisibility(View.GONE);
+                sickCitizen.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        sickCitizen.setVisibility(View.GONE);
+                        soldier.setVisibility(View.GONE);
+                        sickCitizen();
+                    }
+                });
+                soldier.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        sickCitizen.setVisibility(View.GONE);
+                        soldier.setVisibility(View.GONE);
+                        textView_id.setVisibility(View.GONE);
+                        Tv_enterId.setVisibility(View.GONE);
+                        bt_confirm.setVisibility(View.GONE);
+                        txt_wearing_suit.setVisibility(View.VISIBLE);
+                        btn_yes.setVisibility(View.VISIBLE);
+                        btn_No.setVisibility(View.VISIBLE);
+                        btn_yes.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                txt_wearing_suit.setVisibility(View.GONE);
+                                btn_yes.setVisibility(View.GONE);
+                                btn_No.setVisibility(View.GONE);
+                                normalSoldier();
+                            }
+                        });
+                        btn_No.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                txt_wearing_suit.setText("You Can't Vote");
+                                btn_yes.setVisibility(View.GONE);
+                                btn_No.setVisibility(View.GONE);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        soldier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                citizen.setVisibility(View.GONE);
+                sickCitizen.setVisibility(View.GONE);
+                soldier.setVisibility(View.GONE);
+                normalSoldier();
+            }
+        });
         //normalCitizenTryToVote();
         //normalCitizenInWrongKalpi();
         //sickCitizen();
         //normalSoldier();
-        voteTwice();
+       // voteTwice();
+      //  if(vote)
+           // sickCitizen();
 
 
     }
 
     private void voteTwice() {
         sickCitizen();
-        onStart();
+
         /*
         if(vote) {
             textView_id.setVisibility(View.GONE);
@@ -115,13 +187,19 @@ private Button btn_No;
                 textView_id.setVisibility(View.VISIBLE);
                 Tv_enterId.setVisibility(View.VISIBLE);
                 bt_confirm.setVisibility(View.VISIBLE);
-                normalCitizenTryToVote();
+                if(!vote) {
+                    normalCitizenTryToVote();
+                }
+                else{
+                    txt_wearing_suit.setText("You Are Already Voted");
+                    txt_wearing_suit.setVisibility(View.VISIBLE);
+                }
             }
         });
         btn_No.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txt_wearing_suit.setText("You Cant Vote");
+                txt_wearing_suit.setText("You Can't Vote");
                 btn_yes.setVisibility(View.GONE);
                 btn_No.setVisibility(View.GONE);
             }
@@ -143,6 +221,9 @@ private Button btn_No;
     }
 
     private void normalCitizenTryToVote() {
+        bt_confirm.setVisibility(View.VISIBLE);
+        textView_id.setVisibility(View.VISIBLE);
+        Tv_enterId.setVisibility(View.VISIBLE);
         bt_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
